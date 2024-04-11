@@ -9,7 +9,7 @@
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
-  background-color: #f8f8f8;
+  background-color: pink;
   color: #333;
 }
 
@@ -21,7 +21,7 @@ body {
 
 /* Navigation bar */
 nav {
-  background-color: #007bff;
+  background-color: #ff1493;
   color: #fff;
   padding: 10px 0;
 }

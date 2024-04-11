@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Listings</title>
+    <link rel="stylesheet" href="css/style.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <!-- Navigation bar -->
+    <nav>
+        <div class="container">
+            <h1>Featured Properties</h1>
+            <ul>
+                <li><a href="index.html">Home</a></li> <!-- Link back to the home page -->
+                <li><a href="#">Properties</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main content area -->
+    <div class="container">
+        <!-- Property listings section with image carousel or slideshow -->
+        <div class="slideshow-container">
+            <!-- Property 1 -->
+            <div class="slide">
+                <img src="img/brkhvnfront.png" alt="Brookhaven">
+                <img src="img/brkhvnlvgrm.png" alt="Living Room">
+                <img src="img/brkhvnktchn.png" alt="Living Room">
+            </div>
+            <!-- Property 2 -->
+            <div class="slide">
+                <img src="property2.jpg" alt="Property 2">
+            </div>
+            <!-- Add more properties as needed -->
+            
+            <!-- Navigation arrows -->
+            <a class="prev" onclick="prevSlide()">&#10094;</a>
+            <a class="next" onclick="nextSlide()">&#10095;</a>
+        </div>
+        <!-- Add property descriptions, amenities, pricing information, etc. -->
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 37th & Western, LLC. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for the image carousel or slideshow -->
+    <script src="script.js"></script> <!-- Link to your JavaScript file -->
+</body>
+</html>
+
+

@@ -120,3 +120,33 @@ footer {
 footer p {
   font-size: 0.8em;
 }
+
+.slideshow-container {
+  position: relative;
+  max-width: 100%;
+}
+
+.slide {
+  display: none;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  padding: 16px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-size: 24px;
+  z-index: 1000;
+}
+
+.prev {
+  left: 0;
+}

@@ -1,52 +1,111 @@
-let slideIndex = 0;
-showSlide(slideIndex);
+const slideshows = document.querySelectorAll('.slideshow');
 
-function prevSlide() {
-    showSlide(slideIndex -= 1);
-}
+slideshows.forEach(slideshow => {
+    const images = slideshow.querySelectorAll('img');
+    let currentIndex = 0;
 
-function nextSlide() {
-    showSlide(slideIndex += 1);
-}
-
-function showSlide(index) {
-    const slides = document.getElementsByClassName('slide');
-    if (index >= slides.length) { slideIndex = 0 }
-    if (index < 0) { slideIndex = slides.length - 1 }
-    
-    for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = 'none';
-    }
-    slides[slideIndex].style.display = 'block';
-}
-
-// script.js file
-
-document.addEventListener('DOMContentLoaded', function() {
-    // Get the contact form element
-    var contactForm = document.getElementById('contactForm');
-
-    // Add submit event listener to the form
-    contactForm.addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent form submission
-
-        // Get form data
-        var formData = new FormData(contactForm);
-        var formDataObject = {};
-        formData.forEach(function(value, key){
-            formDataObject[key] = value;
-        });
-
-        // Log form data to the console
-        console.log('Form submission:', formDataObject);
-
-        // Clear form fields
-        var formElements = contactForm.elements;
-        for (var i = 0; i < formElements.length; i++) {
-            if (formElements[i].type !== 'submit') { // Exclude submit button
-                formElements[i].value = ''; // Clear field value
+    // Function to show the current slide
+    const showSlide = (index) => {
+        images.forEach((image, i) => {
+            if (i === index) {
+                image.style.display = 'block';
+            } else {
+                image.style.display = 'none';
             }
+        });
+        currentIndex = index;
+    };
+
+    // Show the first slide initially
+    showSlide(currentIndex);
+
+    // Event listeners for previous and next buttons
+    slideshow.addEventListener('click', (event) => {
+        const target = event.target;
+        if (target.classList.contains('prev')) {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            showSlide(currentIndex);
+        } else if (target.classList.contains('next')) {
+            currentIndex = (currentIndex + 1) % images.length;
+            showSlide(currentIndex);
         }
     });
 });
 
+
+const form = document.getElementById('property-search-form');
+// Add event listener for form submission
+form.addEventListener('submit', function(event) {
+ // Prevent the default form submission behavior
+event.preventDefault();
+// Get the values of form fields
+const bedrooms = document.getElementById('bedrooms').value;
+const guests = document.getElementById('guests').value;
+const checkIn = document.getElementById('check-in').value;
+const checkOut = document.getElementById('check-out').value;
+
+if (!bedrooms || !guests || !checkIn || !checkOut) {
+    alert('Please fill in all required fields.');
+    return;
+    }
+// Process the query (example)
+const searchQuery = {
+    bedrooms: bedrooms,
+    guests: guests,
+    checkIn: checkIn,
+    checkOut: checkOut,
+    }
+    clearForm();
+});
+
+function clearForm() {
+    document.getElementById('bedrooms').value = '';
+    document.getElementById('guests').value = ''
+    document.getElementById('check-in').value = '';
+    document.getElementById('check-out').value = '';
+    ;
+}
+
+document.getElementById('property-search-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    // Get user input
+    const bedrooms = parseInt(document.getElementById('bedrooms').value);
+    const guests = parseInt(document.getElementById('guests').value);
+
+    // Filter properties based on bedrooms and guests count
+    const filteredProperties = properties.filter(property => {
+        return property.bedrooms >= bedrooms && property.guests >= guests && property.availability;
+    });
+    console.log('Filtered Properties:', filteredProperties);
+    // Display filtered properties
+    displayProperties(filteredProperties);
+});
+
+function displayProperties(properties) {
+    const propertyResultsDiv = document.getElementById('property-results');
+    propertyResultsDiv.innerHTML = ''; // Clear previous results
+
+    properties.forEach(property => {
+        const propertyDiv = document.createElement('div');
+        propertyDiv.classList.add('property');
+
+        // Create HTML structure for property information
+        propertyDiv.innerHTML = `
+            <h3>${property.name}</h3>
+            <p>Bedrooms: ${property.bedrooms}</p>
+            <p>Guests: ${property.guests}</p>
+            <p>Availability: ${property.availability ? 'Available' : 'Not available'}</p>
+        `;
+
+        // Append property div to results container
+        propertyResultsDiv.appendChild(propertyDiv);
+    });
+}
+
+// Sample static data (replace with your actual property data)
+const properties = [
+    { name: 'Brookhaven', bedrooms: 5, guests: 10, availability: true },
+    { name: 'Farmhouse', bedrooms: 6, guests: 12, availability: true },
+    { name: 'Property 3', bedrooms: 2, guests: 4, availability: false }
+];

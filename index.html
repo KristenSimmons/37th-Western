@@ -11,35 +11,53 @@
         <div class="container">
             <h1>37th & Western</h1>
             <ul>
-                <li><a href="#">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="properties.html">Properties</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <!-- Add more links as needed -->
             </ul>
         </div>
     </nav>
+    
+    <section class="hero">
+        <div class="container">
+            <h1>Welcome to 37th & Western</h1>
+            <p>Find your perfect rental property with us!</p>
+            <a href="properties.html" class="btn">View Properties</a>
+        </div>
+    </section>
+
+    <!-- Search Feature -->
+    <section class="search">
+        <div class="container">
+            <h2>Find Your Perfect Property</h2>
+            <form id="property-search-form">
+                <label for="bedrooms">Bedrooms:</label>
+                <input type="number" id="bedrooms" name="bedrooms">
+
+                <label for="guests">Guests:</label>
+                <input type="number" id="guests" name="guests" min="1">
+            
+                <label for="check-in">Check-in:</label>
+                <input type="date" id="check-in" name="check-in">
+            
+                <label for="check-out">Check-out:</label>
+                <input type="date" id="check-out" name="check-out">
+            
+                <button type="submit">Search</button>
+            </form>
+        </div>
+        <div id="property-results"></div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <h2>What Our Customers Say</h2>
+            <!-- Add testimonials here -->
+        </div>
+    </section>
 
     
-    <div class="container">
-        <header>
-            <h2>Oklahoma City's Premier Superhosts!</h2>
-            <p>Find your perfect getaway with us!</p>
-        </header>
-
-        <!-- Property listings -->
-        <section id="property-listings">
-            <h3>Featured Properties</h3>
-            <!-- Property cards will go here -->
-            <div class="property-card">
-                <img src="img/brkhvnfront.png" alt="Brookhaven">
-                <h4>Beautiful Brookhaven Retreat</h4>
-                <p>Style, Class, Charm- This beautiful home has it all. Located in the best neighborhood in OKC, you are minutes from all major highways, Nichols Hills Plaza, Whole Foods, Western Entertainment District, and everything you could possibly want. High end design, high end build, high end style- this 5 bedroom 4 bath home has everything. From the beautiful kitchen and baths to the relaxing back yard, you have it all. Why settle? Clean, Hip, Modern, Convenient- This is Modern Luxury at its best!</p>
-                <button>View Details</button>
-            </div>
-            <!-- Add more property cards as needed -->
-        </section>
-    </div>
 
     <!-- Footer -->
     <footer>

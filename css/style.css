@@ -2,7 +2,7 @@
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
-  background-color: #fff; /* Change background color to white */
+  background-color: lightgray; /* Change background color to white */
   color: #333;
 }
 
@@ -13,16 +13,27 @@ body {
   padding: 20px;
 }
 
+
 /* Navigation bar */
 nav {
   background-color: rgba(255, 20, 147, 0.8); /* Use a transparent pink color */
   color: #fff;
-  padding: 10px 0;
+  margin: 0 auto; /* Center the nav horizontally */
+}
+
+nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px; /* Limit the maximum width of the container */
+  margin: 0 auto; /* Center the container horizontally */
 }
 
 nav ul {
   list-style-type: none;
   padding-left: 0;
+  font-family: 'Sacramento', cursive;
+  font-size: 25px;
 }
 
 nav ul li {
@@ -40,11 +51,12 @@ nav ul li a:hover {
   background-color: rgba(0, 86, 179, 0.8); /* Darker pink on hover */
 }
 
-.property {
-  border: 1px solid #ccc;
-  padding: 10px;
-  margin-bottom: 10px;
+/* Change font of h1 in nav */
+nav h1 {
+  font-family: 'Sacramento', cursive; /* Use Sacramento font */
+  font-size: 90px; /* Adjust font size as needed */
 }
+
 
 
 /* Hero Section styles */
@@ -56,6 +68,7 @@ nav ul li a:hover {
   color: #fff;
   text-align: center;
   padding: 100px 0;
+  margin-bottom: 20px;
 }
 
 .hero h1 {
@@ -87,8 +100,94 @@ header p {
 
 /* Footer */
 footer {
-  background-color: rgba(51, 51, 51, 0.8); /* Use a transparent black color */
+  background-color: rgba(255, 20, 147, 0.8); /* Use a transparent black color */
   color: #fff;
   padding: 20px 0;
   text-align: center;
+}
+
+/* Search Section styles */
+.search {
+  background-color: light gray;
+  padding: 50px 20px; /* Adjust padding to create space between the content and the border */
+  margin: 0 auto; 
+  max-width: 800px; 
+  border: 2px solid black; /* Add border around the section */
+  border-radius: 10px; /* Add border radius for rounded corners */
+  margin-bottom: 20px;
+}
+
+.search .container {
+  text-align: center;
+}
+
+.search h2 {
+  margin-bottom: 20px;
+}
+
+.search form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.search label {
+  font-weight: bold;
+}
+
+.search input[type="number"],
+.search input[type="date"],
+.search button {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.search button {
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search button:hover {
+  background-color: #0056b3;
+}
+
+/* Testimonials Section styles */
+.testimonials {
+  background-color: rgba(255, 105, 180, 0.5);
+  color: #fff;
+  padding: 50px 0; /* Adjust padding for spacing */
+  margin: 0 auto; /* Center the section horizontally */
+  max-width: 95%; /* Limit the maximum width of the section */
+  border: 2px solid #ccc; /* Add border around the section */
+  border-radius: 10px; /* Add border radius for rounded corners */
+  margin-bottom: 20px;
+}
+
+.testimonials .container {
+  text-align: center;
+}
+
+.testimonials h2 {
+  margin-bottom: 20px;
+}
+
+.testimonials .testimonial-container {
+  display: inline-block; /* Display containers inline */
+  width: calc(33.33% - 20px); /* Set fixed width for each testimonial container */
+  margin-right: 20px; /* Add margin between testimonial containers */
+  vertical-align: top; /* Align containers to the top */
+}
+
+.testimonials p {
+  font-style: italic;
+  font-size: 1.1em; /* Increase font size for better readability */
+  line-height: 1.5; /* Increase line height for better spacing */
+  background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
+  padding: 20px; /* Add padding for spacing */
+  border-radius: 10px; /* Add border radius for rounded corners */
+  width: 100%; /* Ensure each testimonial container fills its width */
 }

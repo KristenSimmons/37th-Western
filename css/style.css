@@ -247,3 +247,56 @@ footer {
   font-size: 18px; /* Adjust font size for p */
   margin-bottom: 40px; /* Add margin bottom for spacing */
 }
+
+.about {
+  background-color: rgba(255, 105, 180, 0.5);
+  padding: 50px 20px; /* Adjust padding for spacing */
+  margin: 0 auto; /* Center the section horizontally */
+  max-width: 90%; /* Limit the maximum width of the section */
+  border: 2px solid black; /* Add border around the section */
+  border-radius: 10px; /* Add border radius for rounded corners */
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.about p {
+  font-size: 18px; /* Increase font size for better readability */
+  line-height: 1.8; /* Increase line height for better spacing */
+}
+
+
+.features {
+ 
+  padding: 50px 20px; /* Adjust padding for spacing */
+  margin: 0 auto; /* Center the section horizontally */
+  max-width: 90%; /* Limit the maximum width of the section */
+
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.features h1 {
+  font-size: 36px; /* Adjust font size as needed */
+  text-align: center; /* Center align the heading */
+  margin-bottom: 30px; /* Add some bottom margin for spacing */
+}
+
+.features ul {
+  list-style-type: none; /* Remove default list styles */
+  padding: 0; /* Remove default padding */
+}
+
+.features li {
+  margin-bottom: 20px; /* Add some bottom margin for spacing between list items */
+}
+
+.features li::before {
+  content: "\2022"; /* Add bullet point before each list item */
+  color: rgba(255, 20, 147, 0.8); /* Change bullet point color */
+  font-size: 20px; /* Adjust bullet point size */
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+

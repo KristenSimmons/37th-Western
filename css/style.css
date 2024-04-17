@@ -186,9 +186,22 @@ footer {
 }
 
 /* Contact form styles */
+.contact {
+  background-color: rgba(255, 105, 180, 0.5);
+  color: #fff;
+  padding: 50px 0; /* Adjust padding for spacing */
+  margin: 0 auto; /* Center the section horizontally */
+  max-width: 75%; /* Limit the maximum width of the section */
+  border: 2px solid black; /* Add border around the section */
+  border-radius: 10px; /* Add border radius for rounded corners */
+  margin-bottom: 20px;
+  margin-top: 30px;
+}
+
 #contactForm {
   background-color: #fff;
-  border: 2px solid #ccc; /* Add border */
+  color: black;
+  border: 2px solid black; /* Add border */
   border-radius: 10px; /* Add border radius for rounded corners */
   padding: 20px; /* Add padding */
   max-width: 500px; /* Limit maximum width of the form */
@@ -249,7 +262,7 @@ footer {
 }
 
 .about {
-  background-color: whitesmoke; /* Use a light background color */
+  background-color: rgba(255, 105, 180, 0.5); /* Use a light background color */
   padding: 50px 20px; /* Adjust padding for spacing */
   margin: 0 auto; /* Center the section horizontally */
   max-width: 85%; /* Limit the maximum width of the section */
@@ -257,19 +270,28 @@ footer {
   border-radius: 10px; /* Add border radius for rounded corners */
   margin-bottom: 20px;
   margin-top: 20px;
+  color: white;
+}
+
+.about h1 {
+  font-size: 36px; /* Adjust font size as needed */
+  text-align: center; /* Center align the heading */
+  margin-bottom: 30px;
 }
 
 .about p {
-  font-size: 18px; /* Increase font size for better readability */
+  font-size: 20px; /* Increase font size for better readability */
   line-height: 1.8; /* Increase line height for better spacing */
 }
 
 .features {
- 
+  border: 2px solid black;
+  border-radius: 10px;
   padding: 50px 20px; /* Adjust padding for spacing */
   margin: 0 auto; /* Center the section horizontally */
-  max-width: 90%; /* Limit the maximum width of the section */
-
+  max-width: 60%; /* Limit the maximum width of the section */
+  background-color: rgba(255, 105, 180, 0.5);
+  color: #fff;
   margin-bottom: 20px;
   margin-top: 20px;
 }
@@ -291,8 +313,8 @@ footer {
 
 .features li::before {
   content: "\2022"; /* Add bullet point before each list item */
-  color: rgba(255, 20, 147, 0.8); /* Change bullet point color */
-  font-size: 20px; /* Adjust bullet point size */
+  color: black; /* Change bullet point color */
+  font-size: 22px; /* Adjust bullet point size */
   display: inline-block;
   width: 1em;
   margin-left: -1em;

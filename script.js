@@ -48,7 +48,7 @@ if (!bedrooms || !guests || !checkIn || !checkOut) {
     alert('Please fill in all required fields.');
     return;
     }
-// Process the query (example)
+// Process the query 
 const searchQuery = {
     bedrooms: bedrooms,
     guests: guests,
@@ -84,26 +84,21 @@ document.getElementById('property-search-form').addEventListener('submit', funct
 
 function displayProperties(properties) {
     const propertyResultsDiv = document.getElementById('property-results');
-    propertyResultsDiv.innerHTML = ''; // Clear previous results
+    propertyResultsDiv.innerHTML = '';
 
     properties.forEach(property => {
         const propertyDiv = document.createElement('div');
         propertyDiv.classList.add('property');
-
-        // Create HTML structure for property information
         propertyDiv.innerHTML = `
             <h3>${property.name}</h3>
             <p>Bedrooms: ${property.bedrooms}</p>
             <p>Guests: ${property.guests}</p>
             <p>Availability: ${property.availability ? 'Available' : 'Not available'}</p>
         `;
-
-        // Append property div to results container
         propertyResultsDiv.appendChild(propertyDiv);
     });
 }
 
-// Sample static data (replace with your actual property data)
 const properties = [
     { name: 'Brookhaven', bedrooms: 5, guests: 10, availability: true },
     { name: 'Farmhouse', bedrooms: 6, guests: 12, availability: true },

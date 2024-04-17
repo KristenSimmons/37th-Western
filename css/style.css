@@ -249,10 +249,10 @@ footer {
 }
 
 .about {
-  background-color: rgba(255, 105, 180, 0.5);
+  background-color: whitesmoke; /* Use a light background color */
   padding: 50px 20px; /* Adjust padding for spacing */
   margin: 0 auto; /* Center the section horizontally */
-  max-width: 90%; /* Limit the maximum width of the section */
+  max-width: 85%; /* Limit the maximum width of the section */
   border: 2px solid black; /* Add border around the section */
   border-radius: 10px; /* Add border radius for rounded corners */
   margin-bottom: 20px;
@@ -263,7 +263,6 @@ footer {
   font-size: 18px; /* Increase font size for better readability */
   line-height: 1.8; /* Increase line height for better spacing */
 }
-
 
 .features {
  

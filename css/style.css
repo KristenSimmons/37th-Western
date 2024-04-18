@@ -297,22 +297,44 @@ footer {
   margin-left: -1em;
 }
 
-.property img {
-  max-width: 50%; /* Set the maximum width of the images to 100% of their container */
-  height: auto; /* Maintain aspect ratio */
-  display: block; /* Ensure proper spacing and alignment */
-}
-
 .property {
   display: flex;
-  flex-direction: column; /* Change flex direction to column */
+  flex-direction: column; /* Arrange items in a column */
   align-items: center; /* Center items horizontally */
-  text-align: center; /* Center text */
   margin-bottom: 40px; /* Adjust spacing between properties */
+  background-color: rgba(255, 105, 180, 0.5);
+  color: #fff;
+  padding: 50px 0; 
+  margin: 0 auto; 
+  max-width: 75%; 
+  border: 2px solid black; 
+  border-radius: 10px; 
+  margin-top: 30px;
+}
+
+.property h2 {
+  text-align: center; /* Center the heading */
+  margin-bottom: 20px; /* Add spacing below the heading */
+  font-weight: bold;
+  font-size: 2.5em;
+  text-decoration: underline;
+}
+
+.property .content {
+  display: flex; /* Arrange content side by side */
+  justify-content: space-between; /* Distribute content evenly */
+  align-items: center; /* Center items vertically */
+  width: 85%; /* Ensure full width */
+  border: 2px solid black; 
+  background-color: #fff;
+  color: black;
+  border-radius: 10px;  
+  padding: 20px;
+  margin-top: 20px;
 }
 
 .property .slideshow {
-  width: 50%; /* Set width for the slideshow */
+  width: 45%; /* Adjust width for the slideshow */
 }
 
 .property .slideshow img {
@@ -321,8 +343,22 @@ footer {
 }
 
 .property p {
-  width: 50%; /* Set width for the description */
-  margin-top: 20px; /* Add spacing between the slideshow and description */
+  width: 45%; /* Adjust width for the description */
+  font-size: larger;
 }
 
+.properties h1 {
+  font-family: 'Sacramento', cursive;
+  font-size: 6em; /* Adjust the font size as needed */
+  font-weight: bold; /* Make the text bold */
+  text-align: center; /* Center the text */
+  margin-bottom: 20px;
+  
+  margin-top: 20px;
+  color: black;
+}
+
+.property:last-child {
+  margin-bottom: 30px; /* Adjust the margin-bottom value to add desired space */
+}
 

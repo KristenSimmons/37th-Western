@@ -302,3 +302,27 @@ footer {
   height: auto; /* Maintain aspect ratio */
   display: block; /* Ensure proper spacing and alignment */
 }
+
+.property {
+  display: flex;
+  flex-direction: column; /* Change flex direction to column */
+  align-items: center; /* Center items horizontally */
+  text-align: center; /* Center text */
+  margin-bottom: 40px; /* Adjust spacing between properties */
+}
+
+.property .slideshow {
+  width: 50%; /* Set width for the slideshow */
+}
+
+.property .slideshow img {
+  max-width: 100%; /* Ensure images don't exceed the container width */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.property p {
+  width: 50%; /* Set width for the description */
+  margin-top: 20px; /* Add spacing between the slideshow and description */
+}
+
+

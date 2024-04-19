@@ -32,41 +32,11 @@ slideshows.forEach(slideshow => {
     });
 });
 
-
 const form = document.getElementById('property-search-form');
+
 // Add event listener for form submission
 form.addEventListener('submit', function(event) {
- // Prevent the default form submission behavior
-event.preventDefault();
-// Get the values of form fields
-const bedrooms = document.getElementById('bedrooms').value;
-const guests = document.getElementById('guests').value;
-const checkIn = document.getElementById('check-in').value;
-const checkOut = document.getElementById('check-out').value;
-
-if (!bedrooms || !guests || !checkIn || !checkOut) {
-    alert('Please fill in all required fields.');
-    return;
-    }
-// Process the query 
-const searchQuery = {
-    bedrooms: bedrooms,
-    guests: guests,
-    checkIn: checkIn,
-    checkOut: checkOut,
-    }
-    clearForm();
-});
-
-function clearForm() {
-    document.getElementById('bedrooms').value = '';
-    document.getElementById('guests').value = ''
-    document.getElementById('check-in').value = '';
-    document.getElementById('check-out').value = '';
-    ;
-}
-
-document.getElementById('property-search-form').addEventListener('submit', function(event) {
+    // Prevent the default form submission behavior
     event.preventDefault();
 
     // Get user input
@@ -77,7 +47,7 @@ document.getElementById('property-search-form').addEventListener('submit', funct
     const filteredProperties = properties.filter(property => {
         return property.bedrooms >= bedrooms && property.guests >= guests && property.availability;
     });
-    console.log('Filtered Properties:', filteredProperties);
+
     // Display filtered properties
     displayProperties(filteredProperties);
 });
@@ -104,3 +74,4 @@ const properties = [
     { name: 'Farmhouse', bedrooms: 6, guests: 12, availability: true },
     { name: 'Property 3', bedrooms: 2, guests: 4, availability: false }
 ];
+

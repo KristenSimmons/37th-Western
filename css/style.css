@@ -115,6 +115,23 @@ footer {
   font-weight: bold;
 }
 
+.search label[for="check-in"],
+.search label[for="check-out"] {
+  flex-basis: 60%; 
+}
+
+.search .date-inputs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  flex-basis: 60%;
+}
+
+.search .date-inputs div {
+  flex-basis: calc(50% - 10px); /* Adjust width to fit two inputs in one line */
+}
+
 .search input[type="number"],
 .search input[type="date"],
 .search button {
@@ -132,6 +149,22 @@ footer {
 
 .search button:hover {
   background-color: #0056b3;
+}
+
+#reset-button {
+  display: none;
+}
+
+.results-images img {
+  max-width: 50%; 
+  height: auto; 
+}
+
+#property-results {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; 
 }
 
 .testimonials {

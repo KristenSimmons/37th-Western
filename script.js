@@ -4,7 +4,6 @@ slideshows.forEach(slideshow => {
     const images = slideshow.querySelectorAll('img');
     let currentIndex = 0;
 
-    // Function to show the current slide
     const showSlide = (index) => {
         images.forEach((image, i) => {
             if (i === index) {
@@ -16,10 +15,8 @@ slideshows.forEach(slideshow => {
         currentIndex = index;
     };
 
-    // Show the first slide initially
     showSlide(currentIndex);
 
-    // Event listeners for previous and next buttons
     slideshow.addEventListener('click', (event) => {
         const target = event.target;
         if (target.classList.contains('prev')) {
@@ -32,46 +29,113 @@ slideshows.forEach(slideshow => {
     });
 });
 
-const form = document.getElementById('property-search-form');
 
-// Add event listener for form submission
-form.addEventListener('submit', function(event) {
-    // Prevent the default form submission behavior
-    event.preventDefault();
+// Function to initialize the search functionality
+function initializeSearch() {
+    const form = document.getElementById('property-search-form');
+    const resetButton = document.getElementById('reset-button');
+    const propertyResults = document.getElementById('property-results');
 
-    // Get user input
-    const bedrooms = parseInt(document.getElementById('bedrooms').value);
-    const guests = parseInt(document.getElementById('guests').value);
+    // Hide the reset button initially
+    resetButton.style.display = 'none';
 
-    // Filter properties based on bedrooms and guests count
-    const filteredProperties = properties.filter(property => {
-        return property.bedrooms >= bedrooms && property.guests >= guests && property.availability;
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const bedrooms = parseInt(document.getElementById('bedrooms').value);
+        const guests = parseInt(document.getElementById('guests').value);
+
+        // Filter properties based on the search criteria
+        const filteredProperties = filterProperties(guests);
+
+        // Display the filtered properties
+        displayProperties(filteredProperties);
+
+        // Show the reset button
+        resetButton.style.display = 'block';
+
+        // Show the property results
+        propertyResults.style.display = 'block';
     });
 
-    // Display filtered properties
-    displayProperties(filteredProperties);
-});
+    // Event listener for the reset button
+    resetButton.addEventListener('click', function() {
+        // Reset the form
+        form.reset();
 
+        // Hide the property results
+        propertyResults.style.display = 'none';
+
+        // Hide the reset button
+        resetButton.style.display = 'none';
+    });
+}
+
+// Function to filter properties based on the number of guests
+function filterProperties(guests) {
+    return properties.filter(property => {
+        return property.guests >= guests;
+    });
+}
+
+// Function to display the filtered properties
 function displayProperties(properties) {
     const propertyResultsDiv = document.getElementById('property-results');
     propertyResultsDiv.innerHTML = '';
 
     properties.forEach(property => {
         const propertyDiv = document.createElement('div');
-        propertyDiv.classList.add('property');
+        propertyDiv.classList.add('results-images');
         propertyDiv.innerHTML = `
             <h3>${property.name}</h3>
-            <p>Bedrooms: ${property.bedrooms}</p>
-            <p>Guests: ${property.guests}</p>
-            <p>Availability: ${property.availability ? 'Available' : 'Not available'}</p>
+            <p>${property.bedrooms} bedrooms, ${property.bathrooms} bathrooms, Max ${property.guests} guests</p>
+            <img src="${property.imageUrl}" alt="Property Image" class="results">
         `;
         propertyResultsDiv.appendChild(propertyDiv);
     });
 }
 
 const properties = [
-    { name: 'Brookhaven', bedrooms: 5, guests: 10, availability: true },
-    { name: 'Farmhouse', bedrooms: 6, guests: 12, availability: true },
-    { name: 'Property 3', bedrooms: 2, guests: 4, availability: false }
+    { 
+        name: 'Brookhaven', 
+        bedrooms: 5, 
+        bathrooms: 3.5,
+        guests: 10, 
+        availability: true,
+        imageUrl: 'img/brkhvnfront.png',
+    },
+    { 
+        name: 'Farmhouse', 
+        bedrooms: 6, 
+        bathrooms: 3,
+        guests: 12, 
+        availability: true,
+        imageUrl: 'img/farmhousefront.png',
+    },
+    { 
+        name: 'Plaza', 
+        bedrooms: 3, 
+        bathrooms: 2,
+        guests: 6, 
+        availability: true,
+        imageUrl: 'img/plazafront.png',
+    },
+    { 
+        name: 'Downtown', 
+        bedrooms: 3, 
+        bathrooms: 3,
+        guests: 6, 
+        availability: true,
+        imageUrl: 'img/sosafront.png',
+    },
+    { 
+        name: 'Norman', 
+        bedrooms: 4, 
+        bathrooms: 3.5,
+        guests: 8, 
+        availability: true,
+        imageUrl: 'img/acresfront.png',
+    },
 ];
 
+initializeSearch();
